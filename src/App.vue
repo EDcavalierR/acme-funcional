@@ -4,7 +4,7 @@
       <Header/>
     </div>
     <div>
-      <VistaAdmin/>
+      <SolicitarCita/>
     </div>
     <div>
       <Footer/>
