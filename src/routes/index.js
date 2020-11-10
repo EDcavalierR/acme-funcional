@@ -9,5 +9,9 @@ router.post('/agregarempleado', async (req, res) => {
     await empleado.save();
 });
 
+router.get('/obtenerempleado', async (req, res) => {
+    const empleado = await Empleado.find();
+});
+
 
 module.exports = router;

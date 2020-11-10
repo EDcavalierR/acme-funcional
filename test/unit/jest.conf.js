@@ -1,6 +1,10 @@
 const path = require('path')
 
 module.exports = {
+  preset: '@shelf/jest-mongodb',
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
   rootDir: path.resolve(__dirname, '../../'),
   moduleFileExtensions: [
     'js',
@@ -15,7 +19,8 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   testPathIgnorePatterns: [
-    '<rootDir>/test/e2e'
+    '<rootDir>/test/e2e',
+    '/node_modules/'
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   setupFiles: ['<rootDir>/test/unit/setup'],

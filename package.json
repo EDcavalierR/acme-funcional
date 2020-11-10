@@ -1,5 +1,14 @@
 {
   "name": "acme",
+  "jest": {
+    "verbose": true,
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "transformIgnorePatterns": ["/node_modules/(?!vue-loading-spinner)"],
+    "testURL": "http://localhost/"
+  },
   "version": "1.0.0",
   "description": "aplicacion de notas",
   "author": "DubanCaballero <duedi707@gmail.com>",
@@ -10,7 +19,10 @@
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:coverage-all": "jest --coverage --watchAll",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js"
   },
