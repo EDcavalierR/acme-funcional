@@ -3,12 +3,21 @@
     <nav class="navbar navbar-expand-lg header" style="background-color: rgba(63, 195, 128, 0.1);">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="..\assets\logo.png" width="30%" height="30%" class="d-inline-block align-top" alt="" loading="lazy">
+          <router-link to='/'>
+            <img src="..\assets\logo.png" width="30%" height="30%" class="d-inline-block align-top" alt="" loading="lazy">
+          </router-link>
         </a>
         <b><label style="font-size: 25px">Sistema de Control de Servicios Médicos IPS ACME</label></b>
           <div class="navbar-nav ml-auto">
-            <a class="btn btn-success ml-3" href="#">Soy Empleado</a>
-            <a class="btn btn-success ml-3" href="#">Contactanos</a>
+            <router-link class="btn btn-success ml-3" to="/VistaAdminEmpleadosRegistrados">
+              Soy Admin
+            </router-link>
+            <router-link class="btn btn-success ml-3" to="/Intermedio">
+              Soy Empleado
+            </router-link>
+            <router-link class="btn btn-success ml-3" to="">
+              Contactanos
+            </router-link>
           </div>
       </div> 
     </nav>

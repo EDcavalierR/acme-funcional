@@ -1,8 +1,40 @@
 <template>
-  <div class="container card border-secondary">
+  <div class="general mt-2">
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="h pr-3 pl-3 pt-3">
+          <div
+            class="btn-group-toggle"
+            style="display: block"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-outline-primary btn-block active">
+              <i class="fas fa-edit"></i>
+              <input type="radio" name="options" id="option1" checked />
+              Empleado
+            </label>
+            <label class="btn btn-outline-primary btn-block">
+              <i class="fas fa-calendar-alt"></i>
+              <span>&nbsp;</span>
+              <input type="radio" name="options" id="option2" /> Horarios
+            </label>
+            <label class="btn btn-outline-primary btn-block">
+              <i class="fas fa-calendar-check"></i>
+              <input type="radio" name="options" id="option3" /> Asistencia
+            </label>
+            <router-link class="btn btn-outline-primary btn-block" to="/AdminInformes">
+              <i class="fas fa-clipboard-list"></i>
+              <span>&nbsp;</span>
+              Informes
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <div class="container card border-secondary">
       <b><label class="mt-3" style="color: rgb(0, 110, 255); font-size: 22px">Ingrese los datos del Empleado</label></b>
       <hr color="grey">
-    <form @submit.prevent="InsertarEmpleado" class="mt-2">
+    <form @submit="InsertarEmpleado" class="mt-2">
         <div class="form-group">
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
@@ -65,7 +97,9 @@
                 <hr color="grey">
                 <div class="row">
                 <div class="col-lg-6">
-                    <button class="btn btn-primary btn-block mb-4">Volver</button>
+                    <router-link to="/VistaAdminEmpleadosRegistrados" class="btn btn-primary btn-block mb-4">
+                      Volver
+                    </router-link>
                 </div>
                 <div class="col-lg-6">
                     <button class="btn btn-primary btn-block mb-4">Agregar Empleado</button>
@@ -74,28 +108,31 @@
         </div>
     </form>
   </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 class Empleado {
-        constructor(dni, nombres, apellidos, telefono, celular, correo, tipousuario, usuario, contraseña) {
-            this.DNI = dni;
-            this.Nombres = nombres;
-            this.Apellidos = apellidos;
-            this.Telefono = telefono;
-            this.Celular = celular;
-            this.Correo = correo;
-            this.TipoUsuario = tipousuario;
-            this.Usuario = usuario;
-            this.Contraseña = contraseña;
-        }
-    } 
+  constructor(dni, nombres, apellidos, telefono, celular, correo, tipousuario, usuario, contraseña) {
+      this.DNI = dni;
+      this.Nombres = nombres;
+      this.Apellidos = apellidos;
+      this.Telefono = telefono;
+      this.Celular = celular;
+      this.Correo = correo;
+      this.TipoUsuario = tipousuario;
+      this.Usuario = usuario;
+      this.Contraseña = contraseña;
+  }
+}
 export default {
-name: 'AgregarEmpleado',
+  name: "VistaAdminAgregarEmpleado",
   data() {
     return {
-        empleado: new Empleado()
-    }
+      empleado: new Empleado()
+    };
   },
   methods: {        
     InsertarEmpleado () {        
@@ -111,10 +148,28 @@ name: 'AgregarEmpleado',
         .then(data => console.log(data));   
         
         this.empleado = new Empleado();
+        alert('Un empleado se ha agregado');
     }
   }
-}
+};
 </script>
 
 <style>
+.general {
+  padding-left: 15px;
+  padding-right: 20px;
+}
+.h {
+  border: solid 1px grey;
+  height: 43.6rem;
+  background: white;
+}
+.GEmpleados{
+    font-size: 20px;
+}
+.titulo{
+    color: rgb(0, 110, 255);
+    font-weight: 600;
+}
+
 </style>

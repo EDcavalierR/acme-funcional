@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const EmpleadoSchema = new Schema({
+const PacienteSchema = new Schema({
+    TipodeIdentificacion: String,
     DNI: String,
     Nombres: String,
     Apellidos: String,
-    Telefono: Number,
     Celular: Number,
+    Telefono: Number,
     Correo: String,
     TipoUsuario: String,
     Usuario: String,
     Contraseña: String,
 })
 
-module.exports = mongoose.model('Empleado', EmpleadoSchema);
+module.exports = mongoose.model('Paciente', PacienteSchema);

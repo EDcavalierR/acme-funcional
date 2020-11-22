@@ -6,7 +6,9 @@
       "node_modules",
       "src"
     ],
-    "transformIgnorePatterns": ["/node_modules/(?!vue-loading-spinner)"],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!vue-loading-spinner)"
+    ],
     "testURL": "http://localhost/"
   },
   "version": "1.0.0",
@@ -29,11 +31,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.13",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.15",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.4.16",
     "nodemon": "^2.0.6",
+    "qrcode": "^1.4.4",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

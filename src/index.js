@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-
 const app = express();
 mongoose.connect('mongodb://localhost/acme')
     .then(db => console.log('Base de datos conectada'))
@@ -11,6 +10,7 @@ mongoose.connect('mongodb://localhost/acme')
 
 
 //Settings
+app.use(express.urlencoded({extended: false}));
 app.set('port', process.env.PORT || 3000);
 
 //Middelwares

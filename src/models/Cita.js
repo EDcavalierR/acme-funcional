@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
-const { Schema} = mongoose;
+const { Schema } = mongoose;
 
 const CitaSchema = new Schema({
-    Duracion: Number,
+    DNIPaciente: String,
+    IdMedico: String,
+    Duracion: String,
     TipoCita: String,
-    LimiteCitas: Number,
     EstadoCita: Boolean,
     PrecioCita: Number,
-    FechaCita: Date,
-    HoraCita: Number,
+    FechaCita: String,
+    HoraCita: String,
 })
 
 module.exports = mongoose.model('Cita', CitaSchema);
